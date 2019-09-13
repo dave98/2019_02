@@ -1,0 +1,56 @@
+\documentclass[a4paper,openany,12pt]{book}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\usepackage[spanish, mexico]{babel}
+\usepackage{fancyhdr}
+\usepackage{ae}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=2cm]{geometry}
+\usepackage[printonlyused]{acronym}
+\usepackage{xspace}
+\usepackage{hlundef}
+\usepackage{tesis}
+\usepackage{setspace}
+
+\title{Generación Procedural de Misiones basadas en modelos de personalidad dentro de los videojuegos}
+
+\author{José David Mamani Vilca}
+
+\advisor{Dr. Ana María Cuadros Valdivia}
+
+
+\begin{document}
+\pagestyle{fancy}
+
+\maketitle %Compone la carátula y la dedicatoria
+
+
+\input{Resumen} %Inserta el resumen
+\input{Abstract} %Inserta el abstract
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{plain}
+\include{abreviaturas}
+\tableofcontents %Inserta el índice general
+\listoftables %Inserta el índice de cuadros
+\listoffigures %Inserta el índice de figuras
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%   En esta parte deberas incluir los archivos de tu tesis   %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\input{Cap_1} %Inserta el capítulo 1
+\input{Cap_2} %Inserta el capítulo 2
+\input{Cap_3} %Inserta el capítulo 3
+\input{conclusiones} %Inserta el capítulo 5
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{apalike}
+\bibliography{Bibliog}
+\addcontentsline{toc}{chapter}{Bibliografía}
+\end{document}
