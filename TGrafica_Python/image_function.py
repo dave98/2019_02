@@ -41,10 +41,6 @@ class i_container:
         else:
             print('Not created image to show')
 
-
-
-
-
 class i0_mask:
     #Permite crear mascaras de 3x3 o 5x5
     def __init__(self, size = 3):
@@ -73,8 +69,6 @@ class i0_mask:
 
     def print_inner_matrix(self):
         print(self.matrix)
-
-
 
 #Just works for garyscale images
 class i0_function:
@@ -128,7 +122,7 @@ img1.i_open(True, 'lena.jpg')
 img2 = i_container('img_2', secondary_state)
 img2.i_open(False, '')
 
-#Creando clase función 
+#Creando clase función
 f_function = i0_function()
 f_function.f_negat(img1, img2)
 #f_function.f_log(img1, img2)

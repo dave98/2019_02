@@ -1,32 +1,48 @@
-\chapter{Nombre del Capítulo II}
+\chapter{Trabajos Relacionados}
 
-Cada capítulo deberá contener una breve introducción que describe en forma rápida el contenido del
-mismo. En este capítulo va el marco teórico y el estado del arte. (pueden hacer dos capítulos: uno marco teórico y otro de estado del arte)
+%Cada capítulo deberá contener una breve introducción que describe en forma rápida el contenido del mismo. En este capítulo va el marco teórico y el estado del arte. (pueden hacer dos capítulos: uno marco teórico y otro de estado del arte)
 
-\section{Sección 1 del Capítulo II}
 
-Un capítulo puede contener n secciones. La referencia bibliográfica se hace de la siguiente manera:
-\cite{Mateos00}
+\section{Marco Teórico}
 
-\subsection{Sub Sección}
+\ac{PCG-G} centrada en la generación narrativa puede describirse como un área enfocada en la producción de contenido argumental para el marco narrativo de un videojuego. Los enfoques tradicionalmente identificados son: Sistemas basados en Simulación y Sistemas Deliberativos REF1.
 
-Una sección puede contener n sub secciones.\cite{Galante01}
+Los Sistemas basados en Simulación tienen por característica principal implementar una serie de reglas que rigen al mundo y a los personajes. Estas reglas actúan como una serie de condicionales que reflejan la intención principal de la historia y son en gran medida establecidas por el propio guionista de la historia. Estas restricciones en conjunto con todas las posibles acciones a realizar sirven de base para una generación sistemática de argumentos narrativos secundarios. Debido a esto, este enfoque suele ser considerado levemente caótico.
 
-\subsubsection{Sub sub sección}
+Por otro lado, los Sistemas Deliberativos comparten las mismas bases que el enfoque previo, más sin embargo, se diferencian por establecer situaciones a ser resolvidas. Este plantemiento permite definir estados deseados a los cuales el sistema debe llegar con prioridad. Un sistema basado en este enfoque es \textit{StoryAssembler} REF3, el cual utiliza una librería de contenidos en donde se especifican las limitantes que posee cada fragmento y que posteriormente son presentadas al jugador a través de una narrativa basada en elecciones. 
 
-Una sub sección puede contener n sub sub secciones.
+Con las definiciones previas es posible definir el desenvolvimiento de un \textit{quest}. Los \textit{quests} son por lo general tareas encargadas por los personajes \ac{NPC} de un juego. Consisten en un grupo de acciones que deben realizarse en un orden en específico para poder alcanzar un objetivo (la mayoría de veces una recompensa) REF4. Los \textit{quests} representan una parte del contenido narrativo por lo que su desenvolvimiento debe ir acorde con el estado del mundo y la actitud de los \ac{NPCs}. Bajo este marco, un \textit{quest} derivado de la aplicación de un sistema \ac{PCG-G} implica el uso de un \textit{AI planning agent}. Debido a la similitud estructural entre el \textit{output} de estas IAs y el contenido de un \textit{quest}, es posible implementar sistemas como REF56789 en donde historias creadas por humanos son modificadas por IAs de planeamiento siguiendo una serie estados en donde se definen el inicio y el orden de eventos. También es importante destacar que en el orden se debe considerar con prioridad un correcto Progreso Lógico-Causal que refleje que los eventos ocurridos a lo largo de la historia obedecen reglas que favorecen la \textbf{credibilidad del personaje}(percepción por parte del jugador en  donde un personaje actúa de manera coherente).
 
-\section{Recomendaciones generales de escritura}
-Un trabajo de esta naturaleza debe tener en consideración varios aspectos generales:
+Enfocado el tema de \textit{quests} podemos clasificarlos en tres categorías segun REF11:
 
 \begin{itemize}
-\item Ir de lo genérico a lo específico. Siempre hay qeu considerar que el lector podría ser alguien no muy familiar con el tema 
-y la lectura debe serle atractiva.
-\item No poner frases muy largas. Si las frases son de mas de 2 líneas continuas es probable que la lectura sea dificultosa.
-\item Las figuras, ecuaciones, tablas deben ser citados y explicados {\bf antes} de que aparezcan en el documento.
-\item Encadenar las ideas. Ninguna frase debe estar suelta. Siempre que terminas un párrafo y hay otro a continuación, 
-el primero debe dejar abierta la idea que se explicará a continuación. Todo debe tener secuencia.
+\item[•] \textit{Place Oriented Quests} son aquellos en donde el jugador debe de moverse por el mundo hacia un lugar especificado y con ciertas pruebas a lo largo del camino.
+\item[•] \textit{Time Oriented Quests} son aquellos considerados como pruebas de resistencia en donde el jugador debe sobrevivir durante un determinado periodo de tiempo.
+\item[•] \textit{Objective Oriented Quests} son aquellos caracterizados por la necesidad de cumplir un objetivo (Conseguir un objeto, traer un aliado, eliminar un enemigo, etc.)
 \end{itemize}
+
+Todas estas categorías pueden mezclarse de manera tal que mientras se respete el marco narrativo, hagan más atractiva la experiencia del jugador.
+
+
+
+%\section{Sección 1 del Capítulo II}
+
+%Un capítulo puede contener n secciones. La referencia bibliográfica se hace de la siguiente manera: \cite{Mateos00}
+
+%\subsection{Sub Sección}
+
+%Una sección puede contener n sub secciones.\cite{Galante01}
+
+
+%\section{Recomendaciones generales de escritura}
+%Un trabajo de esta naturaleza debe tener en consideración varios aspectos generales:
+
+%\begin{itemize}
+%\item Ir de lo genérico a lo específico. Siempre hay qeu considerar que el lector podría ser alguien no muy familiar con el tema y la lectura debe serle atractiva.
+%\item No poner frases muy largas. Si las frases son de mas de 2 líneas continuas es probable que la lectura sea dificultosa.
+%\item Las figuras, ecuaciones, tablas deben ser citados y explicados {\bf antes} de que aparezcan en el documento.
+%\item Encadenar las ideas. Ninguna frase debe estar suelta. Siempre que terminas un párrafo y hay otro a continuación,  el primero debe dejar abierta la idea que se explicará a continuación. Todo debe tener secuencia.
+%\end{itemize}
 
 
 \section{Consideraciones Finales}
