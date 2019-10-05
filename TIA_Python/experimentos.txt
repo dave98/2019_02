@@ -306,3 +306,84 @@ Numero de iteraciones: 3000
 Valore thetha obtenidos:
  [-0.0103017  -0.90460339]
 Mean squared error:  0.11455105000472439
+
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+
+Introducir tasa de aprendizaje: 0.01
+Numero de iteraciones: 500
+Porcentaje de equivalencia:  85.14851485148515
+Porcentaje de equivalencia:  88.11881188118812
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  84.48844884488449
+Introducir tasa de aprendizaje: 0.05
+Numero de iteraciones: 1000
+Porcentaje de equivalencia:  84.15841584158416
+Porcentaje de equivalencia:  86.13861386138613
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  83.4983498349835
+Introducir tasa de aprendizaje: 0.1
+Numero de iteraciones: 1500
+Porcentaje de equivalencia:  84.15841584158416
+Porcentaje de equivalencia:  85.14851485148515
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  83.16831683168317
+Introducir tasa de aprendizaje: 0.2
+Numero de iteraciones: 2000
+Porcentaje de equivalencia:  84.15841584158416
+Porcentaje de equivalencia:  85.14851485148515
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  83.16831683168317
+Introducir tasa de aprendizaje: 0.3
+Numero de iteraciones: 3000
+Porcentaje de equivalencia:  84.15841584158416
+Porcentaje de equivalencia:  85.14851485148515
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  83.16831683168317
+Introducir tasa de aprendizaje: 0.4
+Numero de iteraciones: 4000
+Porcentaje de equivalencia:  84.15841584158416
+Porcentaje de equivalencia:  85.14851485148515
+Porcentaje de equivalencia:  80.1980198019802
+Accuracy promedio:  83.16831683168317
+
+
+
+Introducir tasa de aprendizaje: 0.01
+Numero de iteraciones: 500
+Porcentaje de equivalencia:  74.90196078431373
+Porcentaje de equivalencia:  71.76470588235294
+Porcentaje de equivalencia:  80.7843137254902
+Accuracy promedio:  75.81699346405229
+Introducir tasa de aprendizaje: 0.05
+Numero de iteraciones: 1000
+Porcentaje de equivalencia:  76.47058823529412
+Porcentaje de equivalencia:  74.50980392156863
+Porcentaje de equivalencia:  80.3921568627451
+Accuracy promedio:  77.12418300653594
+Introducir tasa de aprendizaje: 0.1
+Numero de iteraciones: 1500
+Porcentaje de equivalencia:  76.47058823529412
+Porcentaje de equivalencia:  74.50980392156863
+Porcentaje de equivalencia:  80.3921568627451
+Accuracy promedio:  77.12418300653594
+Introducir tasa de aprendizaje: 0.2
+Numero de iteraciones: 2000
+Porcentaje de equivalencia:  76.47058823529412
+Porcentaje de equivalencia:  74.50980392156863
+Porcentaje de equivalencia:  80.3921568627451
+Accuracy promedio:  77.12418300653594
+Introducir tasa de aprendizaje: 0.3
+Numero de iteraciones: 2500
+Porcentaje de equivalencia:  76.47058823529412
+Porcentaje de equivalencia:  74.50980392156863
+Porcentaje de equivalencia:  80.3921568627451
+Accuracy promedio:  77.12418300653594
+Introducir tasa de aprendizaje: 0.4
+Numero de iteraciones: 3000
+Porcentaje de equivalencia:  76.47058823529412
+Porcentaje de equivalencia:  74.50980392156863
+Porcentaje de equivalencia:  80.3921568627451
+Accuracy promedio:  77.12418300653594

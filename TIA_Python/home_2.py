@@ -53,7 +53,7 @@ class data_container:
         self.thetha_history = np.zeros((self.n_iteracciones, self.x_train.shape[1])) #Numero de iteracciones por cantidad de thethas
         self.predicted_history = np.zeros(self.x_test.shape[1], dtype=np.int16)
 
-    def reset_data_container(self, in_train, in_test):
+    def reset_data_container(self, in_train, in_test): #Similar a Init pero con conjunto de entrenamiento y pruebas ya definidos. Util para k_folds_cross_validation
         np.random.shuffle(in_train)
         np.random.shuffle(in_test)
 
@@ -68,7 +68,7 @@ class data_container:
         self.thetha_array = np.zeros((self.x_train.shape[1]), dtype=np.float64)
         #self.thetha_array = np.random.rand(self.x_train.shape[1])
 
-    def set_train_parameters(self, in_iteracciones, in_alpha_learning):
+    def set_train_parameters(self, in_iteracciones, in_alpha_learning): #Define nuevamente in_iteracciones, in_alpha_learning y reinicia los valores para históricos
         self.alpha_learning = in_alpha_learning
         self.n_iteracciones = in_iteracciones
         self.cost_history = np.zeros(self.n_iteracciones, dtype=np.float64)
@@ -85,50 +85,50 @@ class data_container:
         print('y Test: \n', self.y_test)
         print('Thetha array: \n', self.thetha_array)
 
-#++++++++++++++++++++++++++++++++++++++++++++TRADITIONAL IMPLEMENTATION+++++++++++++++++++++++++++++++++++++++
-    def h_function(self, x_singular_array): #Usamos X0 para igualar tamaños de array en theta debido a tetha zero. x0 SIEMPRE va a ser uno
-        r_array = np.multiply(self.thetha_array, x_singular_array)
-        result = np.sum(r_array)
-        return result
+#++++++++++++++++++++++++++++++++++++++++++++TRADITIONAL IMPLEMENTATION (No utilizable)+++++++++++++++++++++++++++++++++++++++
+    #def h_function(self, x_singular_array): #Usamos X0 para igualar tamaños de array en theta debido a tetha zero. x0 SIEMPRE va a ser uno
+    #    r_array = np.multiply(self.thetha_array, x_singular_array)
+    #    result = np.sum(r_array)
+    #    return result
 
-    def sigmoidal_function(self, x_singular_array): #Recibe array de thetas y X de un conjunto de prueba o entrenamiento y retorna su aplicación bajo la función sigmoidal
-        h_value = self.h_function(x_singular_array)
-        result = 1 / (1 + np.exp(-1 * h_value))
-        return result
+    #def sigmoidal_function(self, x_singular_array): #Recibe array de thetas y X de un conjunto de prueba o entrenamiento y retorna su aplicación bajo la función sigmoidal
+    #    h_value = self.h_function(x_singular_array)
+    #    result = 1 / (1 + np.exp(-1 * h_value))
+    #    return result
 
-    def cost_function(self, x_singular_array, y_singular_array): # y_singular_array es solo un numero
-        f_cost = 0.0
-        m = self.x_train.shape[0]
-        for i in range(0, m):
-                f_cost = f_cost +  (    (self.y_train[i] * np.log2(self.sigmoidal_function(self.x_train[i]))) + ((1-self.y_train[i]) * np.log2(1-sigmoidal_function(self.x_train[i])))   )
-        f_cost = (-1/m) * f_cost
-        return f_cost
+    #def cost_function(self, x_singular_array, y_singular_array): # y_singular_array es solo un numero#
+    #    f_cost = 0.0
+    #    m = self.x_train.shape[0]
+    #    for i in range(0, m):
+    #            f_cost = f_cost +  (    (self.y_train[i] * np.log2(self.sigmoidal_function(self.x_train[i]))) + ((1-self.y_train[i]) * np.log2(1-sigmoidal_function(self.x_train[i])))   )
+    #    f_cost = (-1/m) * f_cost
+    #    return f_cost
 
-    def gradiente_function_dev(self, j_thetha_used):
-        f_result = 0.0
-        m = self.x_train.shapex[0]
-        for i in range(0, m):
-            f_result = f_result + ((self.sigmoidal_function(self.x_train[i]) - self.y_train[i]) * self.x_train[i, j_thetha_used] )
-        f_result = self.alpha_learning * f_result
-        return f_result
+    #def gradiente_function_dev(self, j_thetha_used):
+    #    f_result = 0.0
+    #    m = self.x_train.shapex[0]
+    #    for i in range(0, m):
+    #        f_result = f_result + ((self.sigmoidal_function(self.x_train[i]) - self.y_train[i]) * self.x_train[i, j_thetha_used] )
+    #    f_result = self.alpha_learning * f_result
+    #    return f_result
 
-    def gradiente_function_singular(self): #Una iteracción
-        alternative_thetha = self.thetha_array
-        for i in range(0, self.thetha_array.shape[0]):
-            alternative_thetha[i] = alternative_thetha[i] - self.gradiente_function_dev(i)
-        self.thetha_array = alternative_thetha
+    #def gradiente_function_singular(self): #Una iteracción
+    #    alternative_thetha = self.thetha_array
+    #    for i in range(0, self.thetha_array.shape[0]):
+    #        alternative_thetha[i] = alternative_thetha[i] - self.gradiente_function_dev(i)
+    #    self.thetha_array = alternative_thetha
 
-    def gradiente_function_complete(self, n_iteracciones, alpha_learning, is_shown=False):
-        print('Entrenando bajo:', n_iteracciones, 'iteracciones con tasa de arendizaje de', alpha_learning)
-        print('Original tetha', self.thetha_array, '\n')
-        self.set_train_parameters(n_iteracciones, alpha_learning) # Configuramos nuevos parámetros de entramiento
-        for i in range(0, n_iteracciones):
-            self.gradiente_function_singular()
-            if is_shown:
-                print('Iteraccion ', i, 'con alpha', self.thetha_array)
-        print('Final Thetha:', self.thetha_array)
+    #def gradiente_function_complete(self, n_iteracciones, alpha_learning, is_shown=False):
+    #    print('Entrenando bajo:', n_iteracciones, 'iteracciones con tasa de arendizaje de', alpha_learning)
+    #    print('Original tetha', self.thetha_array, '\n')
+    #    self.set_train_parameters(n_iteracciones, alpha_learning) # Configuramos nuevos parámetros de entramiento
+    #    for i in range(0, n_iteracciones):
+    #        self.gradiente_function_singular()
+    #        if is_shown:
+    #            print('Iteraccion ', i, 'con alpha', self.thetha_array)
+    #    print('Final Thetha:', self.thetha_array)
 
-#//////////////////////////////////////////VECTORIAL TREAMENT////////////////////////////////////////////
+#//////////////////////////////////////////VECTORIAL IMPLEMENTATION///////////////////////////////////////////////////////////////////
     def h_function_vec(self): #Trabaja para todos los x de entrenamiento <- TESTED
         return np.multiply(self.thetha_array, self.x_train) #retorna un matrix de n(vertical) n->numero de muestras de entrenamiento x m -> numero de caracteristicas por x
 
@@ -196,7 +196,7 @@ class data_container:
         print('Porcentaje de equivalencia: ', percentaje)
         return percentaje
 
-    #------------------------------Exercises Methods------------------------------------
+    #------------------------------k Folds Cross Validation------------------------------------
     def k_folds_formatter(self, n_folds, cat):
         if np.mod(cat.shape[0], n_folds) != 0:
             new_size = int(cat.shape[0]/ n_folds) * n_folds
@@ -252,15 +252,17 @@ class data_container:
         plt.xlabel('Iteracción')
         plt.show()
 
-#---------------------------------START HERE-----------------------------------------
-#data = reader_on("diabetes_2") #Leendo archivo
-#data = normalize(data)
-
-#d_admin = data_container(data)
+#---------------------------------START HERE (Comentar al momento de utilizar one vs all y one vs one en home_2_extension.py)-----------------------------------------
+data = reader_on("diabetes_2") #Leendo archivo
+data = normalize(data)
+d_admin = data_container(data)
+#-------------------Secuencia de tarea para predicción tradicional
 #d_admin.gradiente_function_complete_vec(200, 0.1, is_shown=False)
 #d_admin.clasifier_function_vec()
 #d_admin.accuracy_analyzer_vec()
-#d_admin.k_folds_cross_validation(n_folds=3, iteraciones=1000)
+#-------------------k_folds_cross_validation (Comentar seccion previa)
+d_admin.k_folds_cross_validation(n_folds=5, iteraciones=2500, alpha_learning=0.01)
+#-------------------Ejecutar ejercicios de practica (Comentar seccion previa)
 #d_admin.experiment_1()
 #d_admin.experiment_2(iteraciones=500, alpha_learning=0.1, title='Diabetes')
 
