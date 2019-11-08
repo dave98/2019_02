@@ -7,33 +7,71 @@
 
 %En esta sección se va desde aspectos generales a  aspectos específicos (como un embudo). No se olvide que es la primera parte que tiene contacto con el lector y que hará que este se interese en el tema a investigar. El objetivo de esta sección es llevar al lector hacie el tema que se va a tratar en forma específica y dejar la puerta abierta a otras investigaciones
 
-Con la acelerada expansión del mundo de los videojuegos y su cada vez mayor influencia en la vida de sus jugadores, se hace necesario comprender que factores son súmamente influyentes en el éxito de una franquicia. Dentro del género \ac{RPG}, videojuegos tales como: \textit{The Elder Scrolls: Skyrim}, \textit{Fallout 3}, \textit{The Witcher}, \textit{Dying Light}, etc han llegado a alcanzar estatus de culto debido al impecable manejo de cuatro pilares fundamentales: Mecánicas, Estética, Tecnología e Historia. 
+Con la acelerada expansión del mundo de los videojuegos y su cada vez mayor influencia en la vida de sus jugadores, se hace necesario comprender que factores son súmamente influyentes en el éxito de una franquicia. Dentro del género \ac{RPG}, videojuegos tales como: \textit{The Elder Scrolls: Skyrim}, \textit{Fallout 3}, \textit{The Witcher}, \textit{Dying Light}, etc han llegado a alcanzar estatus de culto debido al impecable manejo de cuatro pilares fundamentales: Mecánicas, Estética, Tecnología e Historia \cite{schell2019art}. 
 
-Si bien no existe un concepto más importante que otro (al menos durante la etapa de desarrollo), destacaremos el ámbito de la historia al ser uno de los más influyentes en la experiencia del jugador y por ser además el enfoque principal de esta investigación. Contar historias no es una tarea fácil. Al crear y narrar una histora se hace uso de la Inteligencia Narrativa. El propósito de esta es trasmitir una experiencia formada a partir de sucesos reales o ficticios. Dentro del mundo de los videojuegos, las historias representan el eje central en torno al cual giran las experiencias propias del jugador (especialmente en videojuegos del género \ac{RPG}). Una historia puede a la vez ser dividida en pequeños fragmentos que separados conforman las \textit{quest}(misiones) que el jugador tendrá superar para llegar a la completitud de la historia principal. Estos \textit{quest} son también el punto principal de partida para argumentos secundarios que pueden llegar a alargar un poco más la vida útil de un videojuego. 
+Si bien no existe un concepto más importante que otro (al menos durante la etapa de desarrollo), destacaremos el ámbito de la historia al ser uno de los más influyentes en la experiencia del jugador y por ser además el enfoque principal de esta investigación. Contar historias no es una tarea fácil. Al crear y narrar una histora se hace uso de la Inteligencia Narrativa. El propósito de esta es trasmitir una experiencia formada a partir de sucesos reales o ficticios. Dentro del mundo de los videojuegos, las historias representan el eje central en torno al cual giran las experiencias propias del jugador (especialmente en videojuegos del género \ac{RPG}). Una historia puede a la vez ser dividida en pequeños fragmentos que separados conforman los \textit{quests}(misiones) \cite{doran2010towards} que el jugador tendrá superar para llegar a la completitud de la historia principal. Estos \textit{quests} son también el punto principal de partida para argumentos secundarios que pueden llegar a alargar un poco más la vida útil de un videojuego. 
 
-A pesar de su importancia, la aplicación de \textit{quests} en un videojuego conlleva a la realización de una tarea titánica. Centrados ya en el género \ac{RPG}, es casi  común que la mayoría de \textit{quests} a resolverse (ya sean principales o secundarios) hayan sido desarrollado bajo la supervisión de un guionista. Esto por lo general, es lo más adecuado. Sin embargo, el problema se origina cuando la cantidad de \textit{quest} a querer desarrollarse sobrepasa por mucho la capacidad de los guionistas disponibles. Lo natural, llegados a este punto, sería plantear una pronta delimitación en la cantidad de \textit{quest} a desarrollarse, pero esto también repercutiría en la vida útil de nuestro producto. Se sabe que juegos como \textit{The Elder Scrolls: Skyrim} posee alrededor de 244 misiones y que son contados los jugadores que lograron completarlas en su totalidad. El punto entonces no es llenar un videojuego de \textit{quest} pero tampoco presentarlos en una cantidad muy escasa.
+A pesar de su importancia, la aplicación de \textit{quests} en un videojuego conlleva a la realización de una tarea titánica. Enfocados ya en el género \ac{RPG}, es normal que la mayoría de \textit{quests} a resolverse (ya sean principales o secundarios) hayan sido desarrollados bajo la estricta supervisión de un escritor o guionista \cite{cheong2016planning}. Esto por lo general es lo más adecuado. Actualmente no se dispone de sistemas capaces de crear una historia desde cero, por lo que la participación humana se vuelve necesaria y justificable. Sin embargo, el problema principal no radica en las historias en sí, sino en la cantidad de historias que deben desarrollarse. Juegos como \textit{The Elder Scrolls: Skyrim}, \textit{Dying Light} o \textit{Final Fantasy} se caracterizan por poseer una cantidad muy alta de \textit{quests} secundarios en donde cada subargumento ha sido cuidadosamente planteado y desenvuelto. El esfuerzo puesto para que cada pequeña historia haya sido traducida hacia un contexto de \textit{quests} se traduce en varios días de desarrollo y aún así el resultado final es estático e invariable pues definido el \textit{quest}, la serie de eventos que lo conforman es inalterable, por lo que la experiencia del jugador es invariable. 
+
+Para la solución de esta problemática proponemos el sistema CARDINAL. CARDINAL es un sistema diseñado para reconocer el modelo de personalidad que caracteriza a un jugador mediante el uso de una red neuronal y un \textit{test} de personalidad conocido como \textit{The Big Five}. El modelo conformado por cinco parámetros: Extraversión, Apertura a la experiencia, Responsabilidad, Amabilidad y Estabilidad Emocional se obtiene al inicio del juego mediante el uso de 10 escenas introductorias  y se modifica de forma periódica conforme el jugador va desénvolviendose en las mecánicas imbuidas del juego.  Definido el modelo de personalidad, CARDINAL procede a utilizar el Módulo de Planeamiento compuesto por dos submódulos secundarios: El submódulo de Historia y el submódulo de Discurso. En el submódulo de Historia se obtiene la secuencia de eventos que conforman un \textit{quest}. Este submódulo utiliza un planeador \ac{HTN} y para su funcionamiento se hace necesario la definición de un estado inicial (descripción del mundo al inicio del juego). Por otra parte, el submódulo de Discurso es el encargado de desenvolver la historia de una forma tal que resulte atractiva para el jugador (ya sea alterando las mecánicas del juego o modificando la secuencia de eventos en un \textit{quest}). Ambos submódulos trabajan de forma conjunta con el Modelo de Personalidad  siendo para el submódulo de Historia un parámetro útil para definir el tipo de \textit{quest} (Lugar, Tiempo u Objetivo) y para el submódulo de Discurso una variable que describe el estilo de juego en el jugador. Finalmente, y tras haber definido un plan de acción para el jugador, CARDINAL utiliza un módulo de control que verifica que los planes creados por el submódulo de Historia lleguen a concretarse y en caso sea necesario los elimine cuando las condiciones de desarrollo hacen que sea imposible concretar un plan (Condiciones como estas se dan cuando dos planes se interceptan y uno destruye las variables de desenvolvimiento del otro.)
+
+Si CARDINAL llega concretarse, el desarrollo de \textit{quests} que describan segmentos de la historia podría automatizarse a tal grado que la participación de el escritor sería solo necesaria para definir un marco general de acciones en el mundo (estado inicial del juego). La aplicación de este sistema permitiría además obtener un desenvolvimiento de \textit{quests} dinámico en donde los patrones de comportamiento del jugador modifiquen las mecánicas del juego haciendo de la experiencia una novedad frente al desenvolvimiento estático de los \textit{quests} en los \ac{RPG} tradicionales.
+ 
 
 \section{Planteamiento del Problema}
 
-Crear historias y diseñar \textit{quests} en videojuegos del género RPG es una tarea muy laboriosa. Reducir el margen de autoría mediante la utilización sistemas como Cardinal facilitaría en gran medida el proceso de desarrollo de un videojuego.
+En el paradigma tradicional de desarrollo de videojuegos RPG, convertir una historia en un conjunto de \textit{quests} es una tarea extensa y laboriosa. Además, los resultados de este enfoque suelen ser  bastante estáticos e invariables debido al alto grado de autoría que poseen. Estas dos desventajas se traducen en un esfuerzo de desarrollo excesivo y en un videojuego limitado a las opciones argumentales que le han sido programdas. 
 
 
 \section{Objetivos}
 
 %1En esta sección se colocan los objetivos generales de la tesis. Máximo dos. Si necesita ampliar estos objetivos utilice la sección de objetivos específicos.
-Cardinal es una propuesta centrada en aligerar la carga tras los diseños argumentales de un videojuego. Esto no implica prescindir de un guionista o escritor, sino más bien reducir el esfuerzo autorial que este realizaría al desarrollar enteramente un argumento.
+%Cardinal es una propuesta centrada en aligerar la carga tras los diseños argumentales de un videojuego. Esto no implica prescindir de un guionista o escritor, sino más bien reducir el esfuerzo autorial que este realizaría al desarrollar enteramente un argumento.
+
+Implementar CARDINAL, un sistema enfocado en aligerar la carga tras los diseños argumentales de un videojuego. Esto no implica prescindir de un guionista o escritor, sino más bien, reducir el esfuerzo autorial que este realizaría dándole al sistema la opción de desarrollar una historia acorde a los gustos pasivos del jugador.
+
 
 \subsection{Objetivos Específicos}
 
-%En esta sección se coloca el los objetivos específicos de la tesis, que serán aquellos que contesten a lasinterrogantes de investigación.
-Mediante el uso de HTNs proponemos un sistema capaz de interpretar un marco argumental, y que partir de este desarrolle y genere los quest que conforman un videojuego. 
+\begin{itemize}
+\item Implementar un módulo para el reconocimiento de la personalidad mediante el uso de una red neuronal y un test de personalidad conocido como \textit{The Big Five}.
 
-Cardinal también es una propuesta centrada en aprender del jugador. Apoyándose en el desempeño del mismo, genera  \textit{quests} tomando como parámetro modelos de comportamiento y personalidad reconocidos mediante el uso de redes neuronales profundas.
+\item Implementar un módulo para la generación de planes utilizando un planeador \ac{HTN}, y tomando al modelo de personalidad como referencia para definir el tipo de \textit{quest} más adecuado para el jugador.
+
+\item Implementar un módulo para el desenvolvimiento de un plan tomando también al modelo de personalidad como referencia. Este módulo será capaz de alterar la secuencia de eventos y modificar las mecánicas del juego acorde a un modelo de comportamiento imbuido en el modelo de personalidad del jugador.  
+
+\item Implementar un módulo de control en donde los planes generados por el módulo de Historias sean verificados de manera constante. En caso sea necesario, este módulo tendrá la capacidad de  eliminar los planes que resulten imposiles de concretar. 
+
+  
+\end{itemize}
 
 
+\section{Cronograma}
 
-\section{Organización del Plan de  Tesis}
-
-En esta sección se coloca cuantos capítulos contendrá la tesis y que se tratará en cada uno de
-ellos en forma resumida. Dedíquele un párrafo de dos o tres líneas a explicar cada capítulo.
+\begin{table}[]
+\caption{Tabla de Actividades}
+\label{tab:tab4}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{Desde}      & \multicolumn{2}{c|}{Hasta}      & Actividad                                                                                                                                                       \\ \hline
+\multicolumn{1}{|c|}{03/09/2019} & \multicolumn{2}{c|}{01/10/2019} & Redacción del Plan de Tesis                                                                                                                                     \\ \hline
+\multicolumn{1}{|c|}{06/09/2019} & \multicolumn{2}{c|}{10/09/2019} & \begin{tabular}[c]{@{}l@{}}Redacción del Capítulo 1 (Introducción): Objetivo General, \\ Objetivos Específicos, Motivación Contexto, Planeamiento.\end{tabular} \\ \hline
+\multicolumn{1}{|c|}{10/09/2019} & \multicolumn{2}{c|}{12/09/2019} & Corrección del Capítulo 1                                                                                                                                       \\ \hline
+\multicolumn{1}{|c|}{13/09/2019} & \multicolumn{2}{c|}{13/09/2019} & Presentación del Capítulo 1                                                                                                                                     \\ \hline
+\multicolumn{1}{|c|}{15/09/2019} & \multicolumn{2}{c|}{18/09/2019} & \begin{tabular}[c]{@{}l@{}}Redacción del Capítulo 2: \\ Estado del Arte, Marco Teórico\end{tabular}                                                             \\ \hline
+\multicolumn{1}{|c|}{19/09/2019} & \multicolumn{2}{c|}{19/09/2019} & \begin{tabular}[c]{@{}l@{}}Revisión del Capítulo 2: \\ Estado del Arte, Marco Teórico\end{tabular}                                                              \\ \hline
+20/09/2019                       & \multicolumn{2}{l|}{20/09/2019} & \begin{tabular}[c]{@{}l@{}}Presentación del Capítulo 2 \\ Estado del Arte / Marco Teórico\end{tabular}                                                          \\ \hline
+20/09/2019                       & \multicolumn{2}{l|}{01/10/2019} & Finalización en la Redacción del Plan de Tesis                                                                                                                  \\ \hline
+02/10/2019                       & \multicolumn{2}{l|}{06/10/2019} & \begin{tabular}[c]{@{}l@{}}Corrección de observaciones \\ encontradas en el Plan de Tesis.\end{tabular}                                                         \\ \hline
+18/10/2019                       & \multicolumn{2}{l|}{18/10/2019} & Presentación y Aprobación del Plan de Tesis                                                                                                                     \\ \hline
+20/10/2019                       & \multicolumn{2}{l|}{25/10/2019} & \begin{tabular}[c]{@{}l@{}}Implementación del modelo de personalidad \\ utilizando The Big Five. (5\% de resultados)\end{tabular}                               \\ \hline
+26/10/2019                       & \multicolumn{2}{l|}{01/11/2019} & \begin{tabular}[c]{@{}l@{}}Implementación del Sistema para la \\ generación de quest utilizando CONAN (15\%)\end{tabular}                                       \\ \hline
+02/11/2019                       & \multicolumn{2}{l|}{15/11/2019} & \begin{tabular}[c]{@{}l@{}}Implementación del Sistema para la generación \\ de quest utilizando StoryAssembler (35\%)\end{tabular}                              \\ \hline
+16/11/2019                       & \multicolumn{2}{l|}{19/11/2019} & Redacción del Capítulo Resultados.                                                                                                                              \\ \hline
+19/11/2019                       & \multicolumn{2}{l|}{20/11/2019} & Revisión del Capítulo Resultados.                                                                                                                               \\ \hline
+21/11/2019                       & \multicolumn{2}{l|}{21/11/2019} & Presentación del Capítulo Resultados                                                                                                                            \\ \hline
+24/11/2019                       & \multicolumn{2}{l|}{30/11/2019} & Redacción del Documento Avances de Tesis                                                                                                                        \\ \hline
+01/12/2019                       & \multicolumn{2}{l|}{10/12/2019} & Presentación del Documento Avances de Tesis                                                                                                                     \\ \hline
+\end{tabular}
+\end{table}
 

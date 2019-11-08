@@ -1,3 +1,66 @@
 \begin{thebibliography}{}
 
+\bibitem[Breault et~al., 2018]{breault2018let}
+Breault, V., Ouellet, S., and Davies, J. (2018).
+\newblock Let conan tell you a story: Procedural quest generation.
+\newblock {\em arXiv preprint arXiv:1808.06217}.
+
+\bibitem[Cheong et~al., 2016]{cheong2016planning}
+Cheong, Y.-G., Riedl, M.~O., Bae, B.-C., and Nelson, M.~J. (2016).
+\newblock Planning with applications to quests and story.
+\newblock In {\em Procedural Content Generation in Games}, pages 123--141.
+  Springer.
+
+\bibitem[de~Lima et~al., 2018]{de2018player}
+de~Lima, E.~S., Feij{\'o}, B., and Furtado, A.~L. (2018).
+\newblock Player behavior and personality modeling for interactive storytelling
+  in games.
+\newblock {\em Entertainment Computing}, 28:32--48.
+
+\bibitem[Doran and Parberry, 2010]{doran2010towards}
+Doran, J. and Parberry, I. (2010).
+\newblock Towards procedural quest generation: A structural analysis of rpg
+  quests.
+\newblock {\em Dept. Comput. Sci. Eng., Univ. North Texas, Tech. Rep.
+  LARC-2010-02}.
+
+\bibitem[Doran and Parberry, 2011]{doran2011prototype}
+Doran, J. and Parberry, I. (2011).
+\newblock A prototype quest generator based on a structural analysis of quests
+  from four mmorpgs.
+\newblock In {\em Proceedings of the 2nd international workshop on procedural
+  content generation in games}, page~1. ACM.
+
+\bibitem[Garbe et~al., 2019]{garbe2019storyassembler}
+Garbe, J., Kreminski, M., Samuel, B., Wardrip-Fruin, N., and Mateas, M. (2019).
+\newblock Storyassembler: An engine for generating dynamic choice-driven
+  narratives.
+\newblock In {\em Proceedings of the 14th International Conference on the
+  Foundations of Digital Games}, page~24. ACM.
+
+\bibitem[Riedl et~al., 2011]{riedl2011game}
+Riedl, M., Thue, D., and Bulitko, V. (2011).
+\newblock Game ai as storytelling.
+\newblock In {\em Artificial intelligence for computer games}, pages 125--150.
+  Springer.
+
+\bibitem[Schell, 2019]{schell2019art}
+Schell, J. (2019).
+\newblock {\em The Art of Game Design: A book of lenses}.
+\newblock AK Peters/CRC Press.
+
+\bibitem[Young, 2007]{young2007story}
+Young, R.~M. (2007).
+\newblock Story and discourse: A bipartite model of narrative generation in
+  virtual worlds.
+\newblock {\em Interaction Studies}, 8(2):177--208.
+
+\bibitem[Yu and Riedl, 2012]{yu2012sequential}
+Yu, H. and Riedl, M.~O. (2012).
+\newblock A sequential recommendation approach for interactive personalized
+  story generation.
+\newblock In {\em Proceedings of the 11th International Conference on
+  Autonomous Agents and Multiagent Systems-Volume 1}, pages 71--78.
+  International Foundation for Autonomous Agents and Multiagent Systems.
+
 \end{thebibliography}

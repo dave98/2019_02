@@ -2,12 +2,17 @@
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{2}
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n y Contexto}{2}
 \contentsline {section}{\numberline {1.2}Planteamiento del Problema}{3}
-\contentsline {section}{\numberline {1.3}Objetivos}{3}
-\contentsline {subsection}{\numberline {1.3.1}Objetivos Espec\IeC {\'\i }ficos}{3}
-\contentsline {section}{\numberline {1.4}Organizaci\IeC {\'o}n del Plan de Tesis}{3}
-\contentsline {chapter}{\numberline {2}Trabajos Relacionados}{4}
-\contentsline {section}{\numberline {2.1}Marco Te\IeC {\'o}rico}{4}
-\contentsline {section}{\numberline {2.2}Consideraciones Finales}{5}
-\contentsline {chapter}{\numberline {3}CARDINAL}{6}
-\contentsline {chapter}{\numberline {4}Conclusiones}{7}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{8}
+\contentsline {section}{\numberline {1.3}Objetivos}{4}
+\contentsline {subsection}{\numberline {1.3.1}Objetivos Espec\IeC {\'\i }ficos}{4}
+\contentsline {section}{\numberline {1.4}Cronograma}{4}
+\contentsline {chapter}{\numberline {2}Trabajos Relacionados}{6}
+\contentsline {section}{\numberline {2.1}Marco Te\IeC {\'o}rico}{6}
+\contentsline {subsection}{\numberline {2.1.1}Planning Story}{8}
+\contentsline {section}{\numberline {2.2}Estado del Arte}{8}
+\contentsline {subsection}{\numberline {2.2.1}Story Assembler}{9}
+\contentsline {subsection}{\numberline {2.2.2}Let CONAN tell you a story}{9}
+\contentsline {subsection}{\numberline {2.2.3}Story and Discourse}{10}
+\contentsline {chapter}{\numberline {3}CARDINAL}{12}
+\contentsline {subsection}{\numberline {3.0.1}Subm\IeC {\'o}dulo de Historia}{13}
+\contentsline {subsection}{\numberline {3.0.2}Subm\IeC {\'o}dulo de Discurso}{13}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{15}

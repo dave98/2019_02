@@ -4,18 +4,96 @@
 %El título del capítulo es flexible de acuerdo a cada tesis. Algunos títulos sugeridos podrían ser:
 %Este título debe de estar ade acuerdo con el asesor del tema. Consúltelo en su sala de clase.
 
-CARDINAL es una propuesta enfocada en la utilización de cuatro pilares claves. 
+CARDINAL es un sistema de simulación con una propuesta enfocada en la utilización de tres pilares claves. 
 
 El primer pilar implica la identificación de un modelo de personalidad-comportamiento que evolucione conforme el jugador va desenvolviéndose a lo largo del juego. Dicho modelo se obtiene mediante la aplicación de dos técnicas:
 \begin{itemize}
-\item \textit{The Big Five Test} es un cuestionario de 10 preguntas que permite identificar un modelo básico de personalidad al establecer una serie de escenarios que al ser resueltos, definen los parámetros iniciales de \textit{Openess}, \textit{Extraversion}, \textit{Neuroticism}, \textit{Conscientiousness} y \textit{Agreeableness}. REF14
+\item \textit{The Big Five Test} es un cuestionario de 10 preguntas que permite identificar un modelo básico de la personalidad al establecer una serie de escenarios que al ser resueltos, definen los parámetros iniciales de Extraversión, Apertura a la experiencia, Responsabilidad, Amabilidad y Estabilidad Emocional
 
-\item La segunda técnica es una propuesta hecha por REF15. Mediante el uso de una red neuronal entrenada bajo variables relacionadas a las mecánicas del juego, se hace posible la obtención de un modelo de comportamiento. De manera similar al modelo personalidad, el modelo de comportamiento también se define bajo los estándares de \textit{The Big Five} con la diferencia de que este modelo es dinámico. - Extension de descripción -
+\item La segunda técnica es una propuesta hecha por \cite{de2018player}. Mediante el uso de una red neuronal entrenada bajo variables relacionadas a las mecánicas del juego, se hace posible la obtención de un modelo de comportamiento. De manera similar al modelo personalidad, el modelo de comportamiento también se define bajo los estándares de \textit{The Big Five} con la diferencia de que este modelo es dinámico, pues varía conforme el jugador se va desenvolviendo en el videojuego.
 \end{itemize}
 
-Finalmente, la obtención del modelo personalidad-comportamiento se obtiene de la ponderación de los modelos previos. Esta última etapa permite la aplicación de una variable de influencia que permita asignar el grado de perticipación que tiene cada modelo componente. En este caso, y debido a la naturaleza del videojuego en el que nos efocamos (RPG), se dará prioridad al modelo de personalidad. 
+Finalmente, la obtención del modelo personalidad-comportamiento se obtiene de la ponderación de los modelos previos. Esta última etapa requiere de la aplicación de una variable de influencia que permita asignar el grado de perticipación que tiene cada modelo componente. En este caso, y debido a la naturaleza del videojuego en el que nos efocamos (RPG), se dará prioridad al modelo de personalidad. 
 
-El segundo pilar implica el uso de un planeador \ac{DPOCL}
+El segundo pilar fundamental se traduce en la implementación de un módulo de planeamiento. Este módulo basado en las propuestas hechas por \cite{young2007story} se divide en dos submódulos que cubren cada aspecto de la narratología en un videojuego:
+
+\subsection{Submódulo de Historia}
+
+Es un componente centrado en la creación de historias a partir de una planificador \ac{HTN}. Al igual que la propuesta hecha en \cite{breault2018let} cada personaje \ac{NPC} dentro del juego busca siempre alcanzar un objetivo que puede traducirse en un nuevo \textit{quest} para el jugador. Estos objetivos nuevos ingresan al planificador \ac{HTN} junto con el modelo de personalidad. El planificador pondera entonces cuáles son las inclinaciones del jugador en ese instante y procede con la creación de un quest basado en las siguientes consideraciones:
+
+\begin{itemize}
+\item Si el jugador posee un alto grado de extraversión se priorizará la generación de \textit{quests} con carácter de búsqueda.
+\item Si el jugador posee un alto grado de apertura a la experiencia se priorizará la generación de \textit{quests} con carácter de exploración.
+\item Si el jugador posee un alto grado de responsabilidad se priorizará la generación de \textit{quests} con carácter de resistencia.
+\item Si el jugador posee un alto grado de amabilidad se priorizará la generación de \textit{quests} con carácter de búsqueda.
+\item Si el jugador posee un alto grado de estabilidad emocional se priorizará la generación de \textit{quests} con carácter de resitencia.
+\end{itemize}
+
+Cabe recalcar que las definiciones previas son solo conceptos de carácter experimental por lo que su validez dependerá de como se desenvuelvan al momento de ser implementados.
+
+\subsection{Submódulo de Discurso}
+
+El submodulo de Discurso en CARDINAL no es equivalemente al concepto de Discurso en \cite{young2007story}. Discurso en un submódulo casual enfocado en dinamizar la mecánicas del juego en relación al modelo de comportamiento derivado del modelo personalidad del jugador. Considerando la propuesta hechas por \cite{de2018player}, se planea listar la misma serie de mecánicas para ofrecer el mismo comportamiento adaptativo. Si por ejemplo, la red neuronal detecta a un jugador actuando de manera muy violenta, el submódulo de discurso modificará la naturaleza de los enemigos haciéndolos más agresivos o más resitentes al daño. Por otro lado, si el jugador demuestra un carácter más precavido, se enfrentará a enemigos más astutos y a situaciones en donde la estrategia ira por sobre la fuerza bruta. 
+
+Este submódulo posee además la capacidad de reestructurar la secuencia de eventos actuales (Esto no implica modificar la historia)\cite{de2018player}. Si por ejemplo el jugador tiene inclinacíón hacia la exploración y búsqueda de lugares ocultos, el submódulo se encargará de habilitar la mayor cantidad de lugares secretos. Caso contrario, si el jugador apenas demuestra interés por salirse de la ruta tradicional, el submódulo se centrará en mandar una mayor cantidad de enemigos y habrá menos recompensas por parte de los lugares ocultos.
+
+El tercer y último pilar de CARDINAL es un módulo de control. Cada vez que el módulo de planeamiento genera una nueva historia, existe la posibilidad de que otras historias vean afectadas su desenvolvimiento. Este error por lo general se produce cuando los efectos de un Operador en el Planificador afectan la ejecución de otro Operador pues inválida sus precondiciones. En estos casos, concretar dicha misión se vuelve virtualmente imposible siendo necesaria su pronta eliminación. Otra labor que lleva a cabo el módulo de control es la de revisar de manera frecuente las precondiciones y los efectos de cada Operador  en la librería de eventos. Si se ubica una incoherencia, se hace necesario una corrección inmediata
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
