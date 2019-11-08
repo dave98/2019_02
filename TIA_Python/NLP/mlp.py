@@ -87,6 +87,14 @@ class mlp:
         else:
             raise Exception('Error en función de activacion')
 
+    def apply_deactivation_function(self, out_j):
+        if self.activation_function == 'none':
+            return out_j
+        elif self.activation_function == 'sigmoidal':
+            return out_j*(1-out_j)
+        else:
+            raise Exception('Error en función de activacion')
+
     def calculate_error(self, y_data):
         return np.sum(np.divide( np.power((y_data - self.result_y_data), 2), 2), axis=0)
 
@@ -217,10 +225,12 @@ class mlp:
 
             x_train_data, y_train_data = self.get_x_y_data(temp_train_data)
             x_test_data, y_test_data = self.get_x_y_data(temp_test_data)
-            #self.reset()
+            self.reset()
             self.gradiente_descendiente(x_train_data, y_train_data, alpha_learning, ephoques)
 
             prom_accuracy += self.accuracy_lever(x_test_data, y_test_data)
+            print(self.accuracy_lever(x_test_data, y_test_data))
+
         print('Ponderado: ', prom_accuracy/n_folds)
 
     def k_folds_function(self, n_folds, raw_data):
@@ -244,13 +254,13 @@ class mlp:
             return cat
 
 #----------------------------------- START HERE --------------------------------------
-#np.random.seed(0) #Static random generator
-mlp_1 = mlp(8, 2, 4, 1, activation_function='sigmoidal') # EntryLayer, HiddenLayer, NPerHiddenLayer, OutputLayer, Function
-raw_data = mlp_1.reader('diabetes_2')
-#raw_data = mlp_1.reader('heart_2')
+############ Numero de caracteristicas en x sin incluir la columna y
+mlp_1 = mlp(13, 1, 6, 1, activation_function='sigmoidal') # EntryLayer, HiddenLayer, NPerHiddenLayer, OutputLayer, Function
+#raw_data = mlp_1.reader('diabetes_2') # No utilizar Iris
+raw_data = mlp_1.reader('heart_2')
 raw_data = mlp_1.normalize(raw_data)
 #print(raw_data.shape)
-mlp_1.k_folds_cross_validation(3, raw_data, 0.5, 500)
+mlp_1.k_folds_cross_validation(3, raw_data, 1.0, 500) # Nk_Folds, in_data, alpha_learning, ephoques
 
 
 

@@ -52,7 +52,6 @@ def special_k_fold_function(n_folds, raw_data):
     category_1 = np.append(category_1, category_3, axis=1)
     return category_1
 
-
 def k_folds_cross_validation(n_folds, raw_data, is_special=False):
     np.random.shuffle(raw_data)
     if is_special:
@@ -118,30 +117,31 @@ def normalize(in_data):
 
 
 
-#--------------------- For Heart or Numeric Categories ----------------------
-data_container = loading_data("heart_2")
-raw_data = data_container.to_numpy()
-raw_data = normalize(raw_data)
-k_folds_cross_validation(3, raw_data)
-
-
-#--------------------- Just for Iris ----------------------
-#data_container = loading_data("Iris")
+#--------------------- For Heart or Numeric Categories (Descomentar para usar)----------------------
+#data_container = loading_data("heart_2")
 #raw_data = data_container.to_numpy()
-#extract_categories = raw_data[:, [raw_data.shape[1]-1]]
-#extract_categories[extract_categories == 'Iris-setosa'] = 0
-#extract_categories[extract_categories == 'Iris-versicolor'] = 1
-#extract_categories[extract_categories == 'Iris-virginica'] = 2
-#extract_categories = extract_categories.astype('float64')
-
-#raw_data = raw_data[:, :raw_data.shape[1]-1]
-#raw_data = np.c_[raw_data, extract_categories]
-#raw_data = raw_data.astype('float64')
 #raw_data = normalize(raw_data)
+#k_folds_cross_validation(3, raw_data)
 
-#k_folds_cross_validation(3, raw_data, is_special=True)
+
+#--------------------- Just for Iris Dataset (Descomentar para usar)----------------------
+data_container = loading_data("Iris")
+raw_data = data_container.to_numpy()
+extract_categories = raw_data[:, [raw_data.shape[1]-1]]
+extract_categories[extract_categories == 'Iris-setosa'] = 0
+extract_categories[extract_categories == 'Iris-versicolor'] = 1
+extract_categories[extract_categories == 'Iris-virginica'] = 2
+extract_categories = extract_categories.astype('float64')
+
+raw_data = raw_data[:, :raw_data.shape[1]-1]
+raw_data = np.c_[raw_data, extract_categories]
+raw_data = raw_data.astype('float64')
+raw_data = normalize(raw_data)
+
+k_folds_cross_validation(3, raw_data, is_special=True)
 
 
 #'Iris-setosa'
 #'Iris-versicolor'
 #'Iris-virginica'
+    
