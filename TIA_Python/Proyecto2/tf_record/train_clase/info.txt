@@ -1,0 +1,4 @@
+Image shape in: (180, 104, 104, 1)
+Label shape in: (180, 6)
+Image shape out: (1946880,)
+Label shape out: (1080,)
